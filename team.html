@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nanopula – Our Team</title>
+<link rel="stylesheet" href="style.css" />
+
+<style>
+  /* Extra layout styling for the team page */
+  .team-section { padding: 80px 20px; }
+  .team-wrapper { max-width: 1200px; margin: auto; }
+  .team-block { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-bottom: 120px; }
+  .team-block.reverse { direction: rtl; }
+  .team-block.reverse .text { direction: ltr; }
+
+  .member-img { background:#132E3F; border-radius: 12px; overflow: hidden; border: 1px solid #1A4E63; height: 380px; }
+  .member-img img { width: 100%; height: 100%; object-fit: cover; }
+
+  .member-name { font-size: 2.6rem; color:#5FD8D8; font-weight: bold; margin-bottom: 10px; }
+  .member-role { font-size: 1.4rem; color:#4FA3D1; font-weight: bold; margin-bottom: 25px; }
+  .member-bio { font-size: 1.1rem; color:white; margin-bottom: 25px; line-height: 1.6; }
+
+  .detail-item { display: flex; gap: 12px; margin-bottom: 10px; }
+  .detail-item div { width: 10px; height: 10px; background:#5FD8D8; border-radius: 50%; margin-top: 7px; }
+  .detail-item p { color:white; }
+
+  @media (max-width: 900px) {
+    .team-block { grid-template-columns: 1fr; }
+    .team-block.reverse { direction: ltr; }
+  }
+</style>
+</head>
+
+<body>
+<header>
+  <img src="FullLogo.jpg" alt="Nanopula Logo" />
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="team.html">Team</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" style="background:#132E3F; padding:120px 20px; text-align:center;">
+  <h1 style="font-size:56px; color:white; margin-bottom:20px;">Our Team</h1>
+  <p style="font-size:22px; color:#B0D4DC; max-width:800px; margin:auto;">
+    Scientists and strategists united by a mission to make carbon removal accessible and impactful.
+  </p>
+</section>
+
+<!-- Team Section -->
+<section class="team-section bg">
+  <div class="team-wrapper">
+
+    <!-- Member 1 -->
+    <div class="team-block">
+      <div class="member-img">
+        <img src="bogadi.jpg" alt="Bogadi Letsile">
+      </div>
+      <div class="text">
+        <h2 class="member-name">Bogadi Letsile</h2>
+        <p class="member-role">Founder & CEO</p>
+        <p class="member-bio">
+          Bogadi is a materials and nanochemistry innovator and climate entrepreneur passionate about the intersection
+          of science, sustainability, and impact. She founded Nanopula to pioneer nanocellulose-based CO₂ capture
+          technologies that deliver affordable and scalable carbon removal solutions.
+        </p>
+
+        <div class="detail-item">
+          <div></div><p>Degree in Materials and Nanochemistry</p>
+        </div>
+        <div class="detail-item">
+          <div></div><p>Jim Leech Mastercard Foundation Fellowship in entrepreneurship</p>
+        </div>
+        <div class="detail-item">
+          <div></div><p>Member of the African Materials Research Society</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Member 2 -->
+    <div class="team-block reverse">
+      <div class="member-img">
+        <img src="grey.jpg" alt="Gray Maguire">
+      </div>
+      <div class="text">
+        <h2 class="member-name">Gray Maguire</h2>
+        <p class="member-role">Director & CCO</p>
+        <p class="member-bio">
+          Gray Maguire is an environmental economist and systems strategist with over a decade of experience in climate
+          finance, carbon markets, and sustainability policy. He drives Nanopula's climate strategy and ensures our
+          technology aligns with the highest standards of carbon accounting and market integration.
+        </p>
+
+        <div class="detail-item"><div></div><p>Environmental economist and systems strategist</p></div>
+        <div class="detail-item"><div></div><p>Over a decade in climate finance and carbon markets</p></div>
+        <div class="detail-item"><div></div><p>Advocate for scalable African climate solutions</p></div>
+        <div class="detail-item"><div></div><p>Bridges science, economics, and social systems</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2025 Nanopula — Real Science. Real Impact.
+</footer>
+
+</body>
+</html>

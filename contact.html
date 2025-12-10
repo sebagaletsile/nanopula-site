@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Nanopula</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen flex flex-col bg-[#0A2C3C]">
+
+  <!-- Navbar -->
+  <nav class="w-full py-6 bg-[#0A2C3C] border-b border-[#1A4E63]">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-white">
+      <h1 class="text-2xl font-bold">Nanopula</h1>
+      <div class="space-x-8">
+        <a href="index.html" class="hover:text-[#5FD8D8]">Home</a>
+        <a href="about.html" class="hover:text-[#5FD8D8]">About</a>
+        <a href="solutions.html" class="hover:text-[#5FD8D8]">Solutions</a>
+        <a href="contact.html" class="hover:text-[#5FD8D8]">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-20 md:py-32 bg-[#132E3F]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">Get in Touch</h1>
+      <p class="text-xl text-[#B0D4DC] max-w-3xl">
+        Ready to explore carbon capture, regenerative mining, or ocean solutions for your organization? We’d love to hear from you.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-20 bg-[#0A2C3C] flex-1">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12">
+
+        <!-- Form -->
+        <div>
+          <form
+            id="contact-form"
+            action="https://formspree.io/f/mkgnvnpj"
+            method="POST"
+            class="space-y-6"
+          >
+            <!-- Honeypot (for bots) -->
+            <div class="hidden">
+              <label>
+                If you are human, leave this field empty:
+                <input type="text" name="_gotcha" autocomplete="off" />
+              </label>
+            </div>
+
+            <!-- Optional custom redirect after Formspree POST (if JS fails) -->
+            <!-- Create a thank-you.html page and uncomment this if you want redirect fallback -->
+            <!-- <input type="hidden" name="_redirect" value="https://your-domain.com/thank-you.html"> -->
+
+            <div>
+              <label class="block text-white font-bold mb-2" for="name">Name</label>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                required
+                class="w-full px-4 py-3 bg-[#132E3F] border border-[#1A4E63] rounded-lg text-white placeholder-[#7A9AAA] focus:outline-none focus:border-[#5FD8D8] focus:shadow-lg focus:shadow-[#5FD8D8]/30 transition-all duration-200"
+                placeholder="Your name"
+              />
+              <p class="mt-1 text-sm text-red-400 hidden" data-error-for="name"></p>
+            </div>
+
+            <div>
+              <label class="block text-white font-bold mb-2" for="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 bg-[#132E3F] border border-[#1A4E63] rounded-lg text-white placeholder-[#7A9AAA] focus:outline-none focus:border-[#5FD8D8] focus:shadow-lg focus:shadow-[#5FD8D8]/30 transition-all duration-200"
+                placeholder="your@email.com"
+              />
+              <p class="mt-1 text-sm text-red-400 hidden" data-error-for="email"></p>
+            </div>
+
+            <div>
+              <label class="block text-white font-bold mb-2" for="company">Company</label>
+              <input
+                id="company"
+                type="text"
+                name="company"
+                class="w-full px-4 py-3 bg-[#132E3F] border border-[#1A4E63] rounded-lg text-white placeholder-[#7A9AAA] focus:outline-none focus:border-[#5FD8D8] focus:shadow-lg focus:shadow-[#5FD8D8]/30 transition-all duration-200"
+                placeholder="Your company"
+              />
+              <p class="mt-1 text-sm text-red-400 hidden" data-error-for="company"></p>
+            </div>
+
+            <div>
+              <label class="block text-white font-bold mb-2" for="industry">Industry</label>
+              <select
+                id="industry"
+                name="industry"
+                class="w-full px-4 py-3 bg-[#132E3F] border border-[#1A4E63] rounded-lg text-white focus:outline-none focus:border-[#5FD8D8] focus:shadow-lg focus:shadow-[#5FD8D8]/30 transition-all duration-200"
+              >
+                <option value="">Select an industry</option>
+                <option value="cement">Cement & Concrete</option>
+                <option value="mining">Mining & Minerals</option>
+                <option value="power">Power & Energy</option>
+                <option value="steel">Steel & Metallurgy</option>
+                <option value="chemical">Chemical & Fertilizer</option>
+                <option value="other">Other</option>
+              </select>
+              <p class="mt-1 text-sm text-red-400 hidden" data-error-for="industry"></p>
+            </div>
+
+            <div>
+              <label class="block text-white font-bold mb-2" for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="5"
+                class="w-full px-4 py-3 bg-[#132E3F] border border-[#1A4E63] rounded-lg text-white placeholder-[#7A9AAA] focus:outline-none focus:border-[#5FD8D8] focus:shadow-lg focus:shadow-[#5FD8D8]/30 transition-all duration-200"
+                placeholder="Tell us about your project or inquiry..."
+              ></textarea>
+              <p class="mt-1 text-sm text-red-400 hidden" data-error-for="message"></p>
+            </div>
+
+            <!-- Status messages -->
+            <div id="form-status" class="text-sm"></div>
+
+            <button
+              type="submit"
+              class="w-full bg-[#5FD8D8] text-[#0A2C3C] px-8 py-3 rounded-lg font-bold hover:bg-[#4FA3D1] transition-all duration-200 hover:shadow-lg hover:shadow-[#4FA3D1]/40"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h2 class="text-3xl font-bold text-white mb-8">Contact Information</h2>
+
+          <div class="space-y-8">
+            <!-- Email -->
+            <div>
+              <h3 class="text-lg font-bold text-[#5FD8D8] mb-2">Email</h3>
+              <a href="mailto:bogadi.letsile@nanopula.com" class="text-white hover:text-[#5FD8D8] text-lg">
+                bogadi.letsile@nanopula.com
+              </a>
+            </div>
+
+            <!-- Location -->
+            <div>
+              <h3 class="text-lg font-bold text-[#5FD8D8] mb-2">Location</h3>
+              <p class="text-white">Cape Town, South Africa</p>
+            </div>
+
+            <!-- LinkedIn -->
+            <div>
+              <h3 class="text-lg font-bold text-[#5FD8D8] mb-2">LinkedIn</h3>
+              <a
+                href="https://www.linkedin.com/in/bogadi-letsile"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-white hover:text-[#5FD8D8] text-lg"
+              >
+                Bogadi Pako Letsile
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-12 p-6 bg-[#132E3F] border border-[#1A4E63] rounded-lg">
+            <p class="text-white">
+              <span class="text-[#5FD8D8] font-bold">Real Science. Real Impact.</span><br />
+              Nanopula partners with industrial emitters, mining operators, and coastal stakeholders to deploy
+              advanced bio-nanomaterials that remove CO₂, recover value, and restore ecosystems.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0A2C3C] border-t border-[#1A4E63] py-10 text-center text-white">
+    <p>© 2025 Nanopula. All rights reserved.</p>
+  </footer>
+
+  <!-- Form logic: real-time validation + AJAX submit + success/error message -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('contact-form');
+      const statusEl = document.getElementById('form-status');
+
+      const inputs = {
+        name: document.getElementById('name'),
+        email: document.getElementById('email'),
+        company: document.getElementById('company'),
+        industry: document.getElementById('industry'),
+        message: document.getElementById('message'),
+      };
+
+      const honeypot = form.querySelector('input[name="_gotcha"]');
+
+      function setError(field, message) {
+        const input = inputs[field];
+        const errorEl = form.querySelector('[data-error-for="' + field + '"]');
+        if (!input || !errorEl) return;
+
+        if (message) {
+          input.classList.remove('border-[#1A4E63]');
+          input.classList.add('border-red-500');
+          errorEl.textContent = message;
+          errorEl.classList.remove('hidden');
+        } else {
+          input.classList.remove('border-red-500');
+          input.classList.add('border-[#1A4E63]');
+          errorEl.textContent = '';
+          errorEl.classList.add('hidden');
+        }
+      }
+
+      function validateEmail(value) {
+        // Simple email regex for front-end validation
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      }
+
+      function validateField(field) {
+        const value = inputs[field]?.value.trim();
+        if (field === 'name') {
+          if (!value) return setError(field, 'Please enter your name.');
+        }
+
+        if (field === 'email') {
+          if (!value) return setError(field, 'Please enter your email.');
+          if (!validateEmail(value)) return setError(field, 'Please enter a valid email address.');
+        }
+
+        if (field === 'message') {
+          if (!value) return setError(field, 'Please tell us a bit about your inquiry.');
+        }
+
+        // Company and industry are optional for now, no errors set
+        setError(field, '');
+      }
+
+      function validateForm() {
+        validateField('name');
+        validateField('email');
+        validateField('message');
+
+        // Check if any errors are visible
+        const errorEls = form.querySelectorAll('[data-error-for]');
+        for (const el of errorEls) {
+          if (!el.classList.contains('hidden') && el.textContent.trim() !== '') {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      // Real-time validation
+      Object.keys(inputs).forEach((field) => {
+        const input = inputs[field];
+        if (!input) return;
+        input.addEventListener('blur', () => validateField(field));
+        input.addEventListener('input', () => {
+          // Clear error as user types
+          setError(field, '');
+        });
+      });
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        // Bot check
+        if (honeypot && honeypot.value.trim() !== '') {
+          // silently ignore bot submissions
+          return;
+        }
+
+        // Front-end validation
+        if (!validateForm()) {
+          statusEl.textContent = 'Please fix the highlighted fields.';
+          statusEl.className = 'text-sm text-red-400 mt-2';
+          return;
+        }
+
+        statusEl.textContent = 'Sending...';
+        statusEl.className = 'text-sm text-[#B0D4DC] mt-2';
+
+        try {
+          const formData = new FormData(form);
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { Accept: 'application/json' },
+          });
+
+          if (response.ok) {
+            form.reset();
+            statusEl.textContent = 'Thank you. Your message has been sent successfully.';
+            statusEl.className = 'text-sm text-emerald-400 mt-2';
+
+            // Reset borders & errors
+            Object.keys(inputs).forEach((field) => setError(field, ''));
+          } else {
+            statusEl.textContent = 'Something went wrong. Please try again or email us directly.';
+            statusEl.className = 'text-sm text-red-400 mt-2';
+          }
+        } catch (error) {
+          statusEl.textContent = 'Network error. Please check your connection or email us directly.';
+          statusEl.className = 'text-sm text-red-400 mt-2';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

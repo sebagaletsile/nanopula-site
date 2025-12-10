@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nanopula – Real Science. Real Impact.</title>
+
+  <!-- Optional external stylesheet if you use it elsewhere -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Global */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #0b3a4f 0, #02141c 50%, #01070a 100%);
+      color: #e7faff;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 40px;
+      background-color: #05232f;
+      border-bottom: 1px solid #0a4a5a;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header img {
+      height: 55px;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #7ee7e7;
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: 0.03em;
+    }
+
+    nav a:hover {
+      color: #b9ffff;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: calc(100vh - 80px);
+      padding: 80px 40px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    /* Left side (text) */
+    .hero-left {
+      max-width: 650px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(126, 231, 231, 0.3);
+      background: rgba(5, 35, 47, 0.8);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #b9ffff;
+      margin-bottom: 16px;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeUp 0.6s ease-out forwards 0.1s;
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #7ee7e7;
+      box-shadow: 0 0 10px rgba(126, 231, 231, 0.7);
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 6vw, 4.8rem);
+      margin: 0 0 12px;
+      color: #7ee7e7;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.7s ease-out forwards 0.2s;
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+      line-height: 1.7;
+      color: #c7e8f0;
+      margin: 0 0 28px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.7s ease-out forwards 0.35s;
+    }
+
+    .hero-highlight {
+      color: #b9ffff;
+      font-weight: bold;
+    }
+
+    .hero-meta {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #7ee7e7;
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.7s ease-out forwards 0.45s;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.7s ease-out forwards 0.55s;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      border-radius: 999px;
+      padding: 12px 26px;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+        transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-primary {
+      background: #7ee7e7;
+      color: #032128;
+      box-shadow: 0 10px 25px rgba(126, 231, 231, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: #b9ffff;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 32px rgba(126, 231, 231, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #b9ffff;
+      border-color: #3a7d8c;
+    }
+
+    .btn-outline:hover {
+      background: rgba(4, 43, 53, 0.9);
+      border-color: #7ee7e7;
+      transform: translateY(-1px);
+    }
+
+    /* Right side (visual) */
+    .hero-right {
+      position: relative;
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.7s ease-out forwards 0.65s;
+    }
+
+    .hero-orbit-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-orbit {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      border: 1px solid rgba(126, 231, 231, 0.5);
+      position: relative;
+      box-shadow: 0 0 40px rgba(4, 130, 163, 0.5);
+      backdrop-filter: blur(6px);
+      background: radial-gradient(circle at 30% 20%, rgba(126, 231, 231, 0.25), transparent 65%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: slowSpin 18s linear infinite;
+    }
+
+    .hero-orbit-core {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #7ee7e7 0, #0a4a5a 40%, #05232f 75%);
+      box-shadow: 0 0 35px rgba(126, 231, 231, 0.8);
+    }
+
+    .hero-orbit-node {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background: #7ee7e7;
+      box-shadow: 0 0 16px rgba(126, 231, 231, 0.9);
+    }
+
+    /* Nodes around the orbit */
+    .hero-orbit-node:nth-child(2) { top: 10%; left: 50%; transform: translateX(-50%); }
+    .hero-orbit-node:nth-child(3) { right: 10%; top: 50%; transform: translateY(-50%); }
+    .hero-orbit-node:nth-child(4) { bottom: 10%; left: 30%; }
+    .hero-orbit-node:nth-child(5) { top: 55%; left: 8%; }
+
+    .hero-orbit-label {
+      margin-top: 18px;
+      width: 260px;
+      text-align: center;
+      font-size: 13px;
+      color: #c7e8f0;
+      opacity: 0.9;
+    }
+
+    /* Secondary section */
+    .section {
+      padding: 40px 40px 60px;
+    }
+
+    .section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: #7ee7e7;
+      margin-bottom: 16px;
+    }
+
+    .section p {
+      color: #c7e8f0;
+      font-size: 18px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slowSpin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      header {
+        padding: 14px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 18px;
+      }
+
+      .hero {
+        padding: 60px 20px 40px;
+        min-height: auto;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .section {
+        padding: 30px 20px 50px;
+      }
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: #05232f;
+      color: #7ee7e7;
+      border-top: 1px solid #0a4a5a;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="FullLogo.jpg" alt="Nanopula Logo" />
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="team.html">Team</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <!-- Left: text -->
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Carbon Capture · Mining · Oceans
+      </div>
+      <h1 class="hero-title">Nanopula</h1>
+      <p class="hero-subtitle">
+        <span class="hero-highlight">Real Science. Real Impact.</span>
+        We design advanced bio-nanomaterials that help industrial emitters,
+        mining operations, and coastal systems capture CO₂, recover value, and
+        regenerate the environments they rely on.
+      </p>
+      <div class="hero-meta">
+        Built in Africa · Engineered for global decarbonisation
+      </div>
+
+      <div class="hero-actions">
+        <a href="solutions.html" class="btn-primary">Explore Solutions</a>
+        <a href="contact.html" class="btn-outline">Talk to Us</a>
+      </div>
+    </div>
+
+    <!-- Right: animated visual (disc spins, text stays still) -->
+    <div class="hero-right">
+      <div class="hero-orbit-wrapper">
+        <div class="hero-orbit">
+          <div class="hero-orbit-core"></div>
+          <div class="hero-orbit-node"></div>
+          <div class="hero-orbit-node"></div>
+          <div class="hero-orbit-node"></div>
+          <div class="hero-orbit-node"></div>
+        </div>
+        <div class="hero-orbit-label">
+          Nanocellulose aerogels at work – capturing CO₂ and critical minerals.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <h2>Welcome to Nanopula</h2>
+    <p>
+      We combine materials science, electrochemistry, and systems engineering to build
+      carbon capture, regenerative mining, and ocean alkalinity solutions that are modular,
+      measurable, and designed to work in real industrial contexts.
+    </p>
+  </div>
+</section>
+
+<footer>
+  © 2025 Nanopula — Real Science. Real Impact.
+</footer>
+
+</body>
+</html>
+
+
